@@ -1,32 +1,4 @@
-# Good Driver Unite
-
-## Framework7 CLI Options
-
-Framework7 app created with following options:
-
-```
-{
-  "cwd": "/Applications/sites/htdocs/devdeccus/gdufront",
-  "type": [
-    "cordova"
-  ],
-  "name": "Good Driver Unite",
-  "pkg": "com.gooddriverunite",
-  "platform": [
-    "ios",
-    "android"
-  ],
-  "framework": "core",
-  "template": "single-view",
-  "bundler": false,
-  "customColor": false,
-  "iconFonts": true,
-  "cordovaFolder": "cordova"
-}
-```
-
-## NPM Scripts
-## Good Drivers Unite
+# Good Drivers Unite
 
 Good Drivers Unite is a Framework7 application packaged with Apache Cordova for
 Android and iOS. The web application source lives in `www/`; the Cordova
@@ -65,10 +37,7 @@ The build script copies the contents of `www/` into the generated
 must be run from the repository root:
 
 ```bash
-# Build the available Cordova platforms
 npm run build-cordova
-
-# Build one platform
 npm run build-cordova-android
 npm run build-cordova-ios
 ```
@@ -86,17 +55,16 @@ PATH - PURPOSE
 
 ## Configuration
 
-The Parse application configuration is currently defined in
-`www/js/app.js`. Keep server credentials, signing keys, keystores, and local
-environment files out of the repository. The Android background-geolocation
-license in `cordova/config.xml` must be replaced with a valid local or release
-configuration before producing a release build.
+The Parse application configuration is currently defined in `www/js/app.js`.
+Keep server credentials, signing keys, keystores, and local environment files
+out of the repository. Replace the placeholder Android background-geolocation
+license in `cordova/config.xml` with a valid local or release configuration
+before producing a release build.
 
 ## Git Hygiene
 
 Generated output, dependencies, logs, environment files, and signing material
-are excluded by `.gitignore`. Review the staged file list before the first
-push:
+are excluded by `.gitignore`. Review the staged file list before pushing:
 
 ```bash
 git add --dry-run .
