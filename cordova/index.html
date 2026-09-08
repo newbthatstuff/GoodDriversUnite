@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--
+  Customize this policy to fit your own app's needs. For more guidance, see:
+      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+  Some notes:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+      * Enable inline JS: add 'unsafe-inline' to default-src
+  -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta name="theme-color" content="#007aff">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>Good Drivers Unite</title>
+  <link rel="stylesheet" href="framework7/css/framework7.bundle.min.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="theme-dark color-theme-green">
+  <div id="app">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar"></div>
+    <!-- Left panel with cover effect-->
+    <div class="panel panel-left panel-reveal" style="background:black;">
+      <div class="profile-block panel-closes hideOnDesktop">
+        <a href="/edit-profile/" class="close-panel">
+          <div class="col-left">
+            <div class="profile-picture-holder">
+              <img class="profile-picture" src="assets/default_user_avatar.png" alt="Profile Picture" width="100%">
+            </div>
+          </div>
+          <div class="col-right">
+            <span class="label-name"></span>
+            <br>
+            <span class="label-title panel-close">Edit Profile</span>
+          </div>
+        </a>
+      </div>
+      <div class="content-block">
+        <div class="list color-theme-green" id="menu">
+          <ul>
+            <li>
+              <a href="/" class="link panel-close">
+                <div class="item-content">
+                  <div class="item-media"><i class="f7-icons size-22">home</i></div>
+                  <div class="item-inner">
+                    <div class="item-title">Home</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/dashboard/" class="link panel-close">
+                <div class="item-content">
+                  <div class="item-media"><i class="f7-icons size-22">info</i></div>
+                  <div class="item-inner">
+                    <div class="item-title">Dashboard</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li">
+              <a href="/leaderboard/" class="link panel-close">
+                <div class="item-content">
+                  <div class="item-media"><i class="f7-icons size-22">rocket_fill</i></div>
+                  <div class="item-inner">
+                    <div class="item-title">Leaderboard</div>
+                  </div>
+                </div>
+              </a>
+              </li>
+              <li">
+                <a href="/my-records/" class="link panel-close">
+                  <div class="item-content">
+                    <div class="item-media"><i class="f7-icons size-22">archivebox</i></div>
+                    <div class="item-inner">
+                      <div class="item-title">My Records</div>
+                    </div>
+                  </div>
+                </a>
+                </li>
+                <li>
+                  <a href="/" id="logoutLink" class="panel-close">
+                    <div class="item-content">
+                      <div class="item-media"><i class="f7-icons size-22">exit</i></div>
+                      <div class="item-inner">
+                        <div class="item-title">Log Out</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/login/" id="loginLink" class="link panel-close">
+                    <div class="item-content">
+                      <div class="item-media"><i class="f7-icons size-22">enter</i></div>
+                      <div class="item-inner">
+                        <div class="item-title">Log In</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main safe-areas">
+      <div class="page" data-name="home">
+        <!-- Top Navbar -->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link icon-only panel-open" data-panel="left">
+                <i class="icon f7-icons if-not-md">menu</i>
+                <i class="icon material-icons if-md">menu</i>
+              </a>
+            </div>
+            <div class="title sliding">Good Drivers Unite</div>
+            <!-- <div class="right">
+              <a href="https://apps.apple.com/us/app/id1477380275" class="external" target="_blank">
+                <img class="profile-picture" src="assets/images/appstore.png" alt="Appstore Picture" width="120px"
+                  style="padding-right: 20px; padding-top: 10px;">
+              </a>
+            </div> -->
+          </div>
+        </div>
+        <!-- Scrollable page content-->
+        <div class="page-content">
+          <div class="block block-strong" id="topAd">
+            <div class="row">
+              <div class="desktop-10 col-100"></div>
+              <div class="desktop-45 col-100">
+                <a href="" id="topAdHref" class="external" target="_blank">
+                  <img class="profile-picture" src="" alt="Top Ad" width="100%" src="" id="topAdImage">
+                </a>
+              </div>
+              <div class="desktop-10 col-100"></div>
+            </div>
+          </div>
+          <div class="block block-strong hideOnDesktop">
+            <h1>GDU About & History</h1>
+            <p>GDU™ Good Drivers Unite - About the Idea; You Need to ask yourself 3 basic questions:</p>
+            <ul>
+              <li>Do You Drive?</li>
+              <li>Do You own a Smart Phone with Data Enabled?</li>
+              <li>Do U think of yourself as a responsible driver?</li>
+            </ul>
+            <h3>If you've answered Yes to above 3 Questions, Consider Joining Voluntary Good Driver’s Association - GDU™
+            </h3>
+            <ul>
+              <li>All GDU needs from you is your Email Address, which is necessary to open and validate your GDU
+                Account.</li>
+              <li>Driving Rewards will be sent to lucky good-drivers via email e-Transfer, possibly by designated Trust
+                Law Firm.</li>
+              <li>You don’t have to share your real name.</li>
+              <li>Your Car, Age, Gender are nice to have information, but if you want, you could be Batman driving a
+                Batmobile…</li>
+              <li>GDU will not share your driving record without your written consent.</li>
+              <li>Your Driving Record is measured in School Grade Scale Format:</li>
+              <h4>City Driving Grade Scale:</h4>
+              <p>40kph < A ≤ 55kph < B ≤ 65kph < C ≤ 75kph < D ≤ 90kph</p>
+                  <h4>HWY Driving Grade Scale:</h4>
+                  <p>90kph < A ≤ 110kph < B ≤ 120kph < C ≤ 130kph < D ≤ ∞kph</p>
+                      <li>Only non-erroneous speed Data is Captured.</li>
+                      <li>GDU will show You or your household teenage driver/s, how good of a driver are you.</li>
+                      <li>GDU will also help You to become a more responsible road user.</li>
+            </ul>
+            <p>Most Important Facts about the GDU idea:</p>
+            <ul>
+              <li>To Join & Benefit all you need is a Smart Phone with data enabled and a car that you use day to day
+              </li>
+              <li>You remain in full control of your Driver Record.</li>
+              <li>Your insurance co. will soon make U join their Good Driver – App/Plan, which they will
+                control/administer (Do you really want to depend on that?)</li>
+              <li>If you are a Responsible-Good-Driver, You can win Serious Monetary Rewards:
+                <ul>
+                  <li>Best Driver of the Month $500.00</li>
+                  <li>2nd best Driver of the Month $300.00</li>
+                  <li>3rd best Driver of the Month $200.00</li>
+                  <li>Depending if the GDU association takes off, other more serious rewards will be offered to Top
+                    Drivers on Annual Basis.</li>
+                </ul>
+              </li>
+            </ul>
+            <h3>GDU™ - History of the Idea</h3>
+            <ul>
+              <li>While I drove for many years on HWY401 from West To East sides of Toronto. In 2011 an idea struck me
+                that with the Smartphones, there has to be a way to help Drivers to Drive Better, Safer & More
+                Efficient.</li>
+              <li>This is How the Premise of Good Drivers Unite – Drivers Association was invented.</li>
+              <li>The Insurance business Companies were in hot pursuit, and in year or two they had their apps running,
+                with AVIVA in the UK.
+                <ul>
+                  <li>The Key difference between Insurance Drivers Apps and GDU is that GDU is a Good Driver’s
+                    Association, a bit like Drivers Facebook; instead of Individual Insurance Company Better Driver
+                    App/s, which only ties you to that one Insurance Company.
+                  </li>
+                  <li>Also, Available Insurance smart phone Apps utilize Good Driver Algorithms that tend to be
+                    unnecessarily over-complicated; while GDU App is simple and focusses only on One-Thing that Kills
+                    and is at the root of bad driving, The Speed.</li>
+                  <li>Speed Dictates everything, if your speed is in-check, then everything else about your driving will
+                    also be in good standing.</li>
+                  <li>GDU name came about Quick with the Logo, that was first drawn on piece of paper by hand and then
+                    followed by one drawn in MS-Paint.</li>
+                </ul>
+              </li>
+            </ul>
+            <div class="row no-gap">
+              <!-- Each "cell" has col-[width in percents] class -->
+              <div class="col-40"><img src="assets/images/ologo.jpg"></div>
+              <div class="col-30"><img src="assets/images/ologo2.jpg"></div>
+              <h1>Drive Safe & Good Luck!</h1>
+            </div>
+          </div>
+          <div class="block block-strong showOnDesktop">
+            <div class="row">
+              <div class="desktop-10 col-100"></div>
+              <div class="desktop-55 col-100 text-align-center">
+                <h2 style="font-size: 35px;">If
+                  you are
+                  a regular driver, own a
+                  smart phone and think of yourself as a
+                  responsible Driver, GDU, GoodDriversUnite, is
+                  the reward application for you</h2>
+              </div>
+              <div class="desktop-10 col-100"></div>
+            </div>
+            <div class="row">
+              <div class="desktop-10 col-100"></div>
+              <div class="desktop-45 col-100">
+                <img class="profile-picture" src="assets/images/screens.png" alt="Screen Picture" width="100%">
+              </div>
+              <div class="desktop-10 col-100"></div>
+            </div>
+            <div class="row">
+              <div class="desktop-30 col-10"></div>
+              <div style="padding-top: 20px;" class="desktop-35 col-80">
+                <a href="https://apps.apple.com/us/app/id1477380275" class="external" target="_blank">
+                  <img class="profile-picture" src="assets/images/appstore.png" alt="Appstore Picture" width="200px">
+                </a>
+              </div>
+              <div class="desktop-10 col-100"></div>
+            </div>
+            <div class="row">
+              <div class="text-align-center col block block-strong medium-inset">
+                <h1 style="padding-left: 22%; width: 55%; padding-top: 20px; padding-bottom: 20px;"
+                  class="block-title block-title-medium">
+                  What is about?</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="desktop-33 col-100">
+                If you are a regular driver, own a smart phone and think of yourself as a responsible Driver, GDU,
+                GoodDriversUnite, is
+                the reward application for you.
+                GDU is a voluntary drivers application which will help you to remain a good driver or will incent you to
+                become a more
+                responsible driver via Driver Self Monitoring - GDU App.
+                GDU, incents you to Drive Safe with a Weekly Best Driver award of $100 & monthly awards of $500, $300,
+                and $200, for
+                1st, 2nd, and 3rd place, respectively. All paid via email transfer, after winners get assessed.
+              </div>
+              <div class="desktop-33 col-100">
+                There is absolutely nothing for you to do, except a one-time quick download of the Free App (iOS), and
+                keep driving safe
+                as you normally do…
+                After each week, if you drive enough and at various speeds, you will get an A/B/C/D Type Driving Grade
+                Report, which
+                will be sent to you via a short email message.
+                In your First week, drive as you normally do, and see what Grade you get, if you get A B/C/ or D, then
+                there is room to
+                improve. If you get an A, then you can consider yourself a strong candidate to win either best weekly
+                driver or best
+                Monthly Driver Award or Both.
+              </div>
+              <div class="desktop-33 col-100">
+                Beside the monetary rewards possibilities of good Drivers Awards, It is even more important to know that
+                You and people
+                like You, with the help of the - GDU App, will contribute to make our speed demon-ridden dangerous roads
+                safer and also
+                less congested to everyone, via more careful & responsible driving habits…
+                Slowing down is not only beneficial from a safety perspective but it lowers your Gasoline Consumption.
+                Countless
+                Statistical Road Safety Studies, have shown that one key factor that contributes the most to accident
+                fatalities is
+                driving Speed. It is simply Physics.
+                Lower Your Speed and you may avoid or survive an accident, Arrive Alive to You All…
+              </div>
+            </div>
+          </div>
+          <div class="block block-strong" id="bottomAd">
+            <div class="row">
+              <div class="desktop-10 col-100"></div>
+              <div class="desktop-45 col-100">
+                <a href="" id="bottomAdHref" class="external" target="_blank">
+                  <img class="profile-picture" src="" alt="Bottom Ad" width="100%" src="" id="bottomAdImage">
+                </a>
+              </div>
+              <div class="desktop-10 col-100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Parse -->
+    <!-- Cordova -->
+    <script src="cordova.js"></script>
+    <script src="js/parse.js"></script>
+    <!-- jQuery library -->
+    <script src="js/jquery.js"></script>
+    <!-- Framework7 library -->
+    <script src="framework7/js/framework7.bundle.min.js"></script>
+    <!-- Cordova APIs -->
+    <script src="js/cordova-app.js"></script>
+    <!-- App routes -->
+    <script src="js/routes.js"></script>
+    <!-- App moments -->
+    <script src="js/moments.js"></script>
+    <!-- App scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>
