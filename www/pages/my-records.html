@@ -1,0 +1,58 @@
+<div class="page color-green" data-name="my-records">
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="if-not-md">Back</span>
+        </a>
+      </div>
+      <div class="title">Your Driving Records</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="row">
+      <div class="desktop-10 col-100"></div>
+      <div class="desktop-55 col-100 text-align-center">
+        <div class="block-title">Pick a Date Range</div>
+        <form class="block" action="Javascript:void(0)" method="post" accept-charset="utf-8" role="form"
+          id="dateRangeForm">
+          <div class="list no-hairlines-md">
+            <ul>
+              <li>
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-input-wrap">
+                      <input type="text" placeholder="Select date range" readonly="readonly" id="date-range"
+                        name="date-range" />
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="row">
+              <div class="col-50"></div>
+              <button class="col-50 button button-fill btn-xs button-round" type="submit"
+                id="submitDateRange">Search</button>
+            </div>
+          </div>
+        </form>
+        <div class="card data-table">
+          <table>
+            <thead>
+              <tr>
+                <th class="label-cell">Date</th>
+                <th class="numeric-cell">Speed</th>
+                <th class="numeric-cell">Location</th>
+              </tr>
+            </thead>
+            <tbody id="drivingRecordsList">
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+      <div class="desktop-10 col-100"></div>
+    </div>
+  </div>

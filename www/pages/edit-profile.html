@@ -1,0 +1,131 @@
+<div class="page" data-name="edit-profile">
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link icon-only panel-open" data-panel="left">
+          <i class="icon f7-icons ios-only">menu</i>
+          <i class="icon material-icons md-only">menu</i>
+        </a>
+      </div>
+      <div class="title">Edit Profile</div>
+    </div>
+  </div>
+
+  <div class="page-content login-screen-content login-form-box">
+    <form class="block" action="Javascript:void(0)" method="post" accept-charset="utf-8" role="form" id="updateProfileForm">
+      <div class="row ppContainer">
+        <div class="col-100">
+          <div class="add-photo">
+            <a href="#" class="button btn-add-photo icon-only" id="editProfilePic">
+              <i class="f7-icons size-22">camera</i>
+            </a>
+            <input type="hidden" id="profilePictureHidden" name="profilePictureHidden">
+          </div>
+          <p class="info-add-photo">Add Your Avatar</p>
+        </div>
+      </div>
+      <div class="list">
+        <ul>
+          <li>
+            <div class="row">
+              <div class="col-50">
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">First Name *</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="firstName" placeholder="Your first name" id="firstName" required
+                        validate>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-50">
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Last Name *</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="lastName" placeholder="Your last name" id="lastName" required validate>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="row">
+              <div class="col-50">
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Gender *</div>
+                    <div class="item-input-wrap">
+                      <select name="gender" id="gender" required validate>
+                        <option value="">Choose One</option>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-50">
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Birthday *</div>
+                    <div class="item-input-wrap">
+                      <input type="text" placeholder="Your birth date" name="dob" id="dob" readonly="readonly"
+                        validate />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <div class="row">
+            <div class="col-33">
+              <div class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Car Make</div>
+                  <div class="item-input-wrap">
+                    <input type="text" name="carMake" placeholder="Your car make" id="carMake">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-33">
+              <div class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Car Model</div>
+                  <div class="item-input-wrap">
+                    <input type="text" name="carModel" placeholder="Your car model" id="carModel">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-33">
+              <div class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Car Year</div>
+                  <div class="item-input-wrap">
+                    <input type="number" name="carYear" placeholder="Your car year" id="carYear">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </li>
+        </ul>
+      </div>
+      <div class="block">
+        <!--<p class="info">By clicking sign up you agree to our <a href="#" data-popup=".popup-terms-service" class="open-popup">Terms of Service</a></p>-->
+        <p class="row">
+          <button class="col button button-big button-fill button-raised" type="submit" id="submitUpdateProfileForm">Update</button>
+        </p>
+      </div>
+      <div class="block">
+        <p class="row">
+          <button class="col button button-big button-fill button-raised color-red" type="button" id="deleteMyAccount">Delete Account</button>
+        </p>
+      </div>
+    </form>
+  </div>
